@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: momijiichigo.github.io
+Token: 1b6a91728fbee16e96bf76bda5140a682c0c470be692698cafbe85df0ebe623d
