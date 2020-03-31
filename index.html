@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="icon" href="./icon/drawing.svg" type="image/svg">
+        <link rel="icon" type="image/png" href="./icon/icon-192x192.png">
+        <link rel="manifest" href="manifest2.webmanifest">
+
+        <link rel="stylesheet" type="text/css" href="./main.css">
+        <!-- android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" type="image/png" href="./icon/apple-touch-icon-180x180.png">
+        <!-- iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="orange">
+        <script>
+            if ('serviceWorker' in navigator) {
+                
+                navigator.serviceWorker.register('./sw.js').then(function() {
+                    console.log('sucsessed');
+                }).catch(function(err) {
+                    console.log('error:', err);
+                });
+            }
+            
+        </script>
+        <title>Welcome</title>
+    </head>
+    <body>
+        test
+        
+    </body>
+</html>

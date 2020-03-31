@@ -1,0 +1,74 @@
+:root{
+    --scroll-origin:0px;
+    --finger-highlight-origin:0px;
+}
+#menuIcons {
+    position: absolute;
+    top:0px;
+    mix-blend-mode: difference;
+    background-image: url(./icon/icons8-settings-50-2.png),url(./icon/icons8-console-50.png),url(./icon/icons8-html-5-50.png);
+    background-position: left,center, right;
+}
+#container {
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    height: 90vh;
+    width:100vw;
+    display: flex;
+}
+#menuScrollBar{
+    position:fixed;
+    width: 100vw;
+    height:10vh;
+    bottom: 0vh;
+    background-color:#23231d;
+    background: rgba(0, 0, 0, 1);
+}
+/*
+below, width should change if number of 
+*/
+#menuhighlight{
+    position: relative;
+    overflow: hidden;
+    width:33%;
+    height:100%;
+    border-radius: 50%;
+    filter: blur(10px) contrast(10);
+    background-color: rgba(255, 255, 255, 0.657);
+    transition: left ease 400ms;
+    left: var(--scroll-origin);
+}
+
+#menutouchlight{
+    position: absolute;
+    overflow: hidden;
+    top:15%;
+    filter: blur(10px) contrast(10);
+    width:20%;
+    height:70%;
+    border-radius: 30%;
+    background-color: rgba(255, 255, 255, 0.657);
+    transition: left ease 400ms;
+    left: var(--scroll-origin);
+}
+#container::-webkit-scrollbar{
+    height:0px;
+}
+
+.area {
+    scroll-snap-align: start;
+    width:100vw;
+    flex: none;
+    overflow-y: scroll;
+}
+body{
+    margin: 0px;
+    scroll-behavior: smooth;
+    
+}
+.area:nth-child(even) {
+    background-color: #0db;
+}
+.area:nth-child(odd) {
+    background-color: #0bd;
+}
