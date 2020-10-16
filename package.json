@@ -7,8 +7,8 @@
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "watch": "webpack --watch",
-    "deploy": "npm run build && gh-pages -d dist",
-    "push": "git add . && git commit -a -m 'npm' && git push",
+    "deploy": "npm run build && npm run push",
+    "push": "git add . && git commit -a -m 'deploy' && git push",
     "ttttt": "echo "
   },
   "author": "Ichigo",

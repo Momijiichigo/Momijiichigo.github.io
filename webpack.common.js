@@ -15,12 +15,6 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  cache: {
-    type: 'filesystem',
-    buildDependencies: {
-      config: [__filename]
-    }
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env)
@@ -36,22 +30,22 @@ module.exports = {
     new WebpackPwaManifest({
       filename: "manifest.webmanifest",
       orientation: 'omit',
-      short_name: "Hakqlo",
-      name: "Hakqlo App",
+      short_name: "MI",
+      name: "MI page",
       start_url: "./index.html",
       display: "standalone",
       background_color: "#000000",
       theme_color: "#000000",
-      description: "Hakqlo's PWA app",
+      description: "MI's homepage",
       categories: ["tech", "coding", "community"],
-      icons: [
+      icons: [/*
         {
           src: path.resolve("./icon/logo008b.svg"),
           sizes: [256],
           type: "image/svg+xml"
-        },
+        },*/
         {
-          src: path.resolve("./icon/logo008b.png"),
+          src: path.resolve("./icon/icon.png"),
           sizes: [96,192,512],
           type: "image/png"
         },
@@ -65,25 +59,12 @@ module.exports = {
           short_name: "shortcut 1",
           description: "hello",
           url: "./index.html?call=shortcut&content=shortcut1",
-          /*
-          icons: [
-            { 
-              src: "./icon/icon_96.png",
-              sizes: "96x96"
-            }
-          ]*/
         },
         {
           name: "shortcut 2",
           short_name: "shortcut 2",
           description: "what's up boy",
           url: "./index.html?call=shortcut&content=shortcut2",
-          /*icons: [
-            { 
-              src: "./icon/icon_96.png",
-              sizes: "96x96"
-            }
-          ]*/
         }
       ]
     }),

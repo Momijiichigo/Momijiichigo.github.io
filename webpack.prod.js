@@ -9,7 +9,13 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     publicPath: './',
-  },
+  },/*
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename]
+    }
+  },*/
   plugins: [
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: './src/sw.js',
