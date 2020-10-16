@@ -1,0 +1,11 @@
+$languages: en, ja;
+@mixin SetLanguage(){
+  @each $lang in $languages {
+    &:not([lang|=#{$lang}]) :lang(#{$lang}) { 
+      display: none; 
+    }
+  }
+}
+body {
+  @include SetLanguage();
+}

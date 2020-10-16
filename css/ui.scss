@@ -1,0 +1,93 @@
+@import './gestureHandler.scss';
+app-window {
+  position: absolute;
+  //top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  transform-origin: 50vw 0vh;
+  transition-duration: 0.2s;
+  z-index: 7;
+  &.focus {
+    transform: none;
+    opacity: 1;
+    >.cover{
+      visibility: hidden;
+    }
+  }
+  &.away {
+    opacity: 0;
+  }
+  > .cover{
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+  }
+  > iframe{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  //below is for testing
+  /*
+  &:nth-child(1n) {
+    background-color: green;
+  }
+  &:nth-child(2n) {
+    background-color: blue;
+  }
+  &:nth-child(3n) {
+    background-color: red;
+  }*/
+  .testing {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+  }
+}
+#windowsContainer {
+  position: absolute;
+  perspective: 300px;
+  //perspective-origin: 50vw -100vh;
+  perspective-origin: 50vw 0;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  z-index: 6;
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+  &.away {
+    transform: translateY(-100vh);
+    //perspective-origin: 50vw -50vh;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.scrolling > app-window{
+    transition-duration: 0s;
+  }
+}/*
+#goBaseSpace {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  visibility: visible;
+  z-index: 5;
+  &.hidden{
+    visibility: hidden;
+  }
+}
+
+
+
+*/
